@@ -1,0 +1,20 @@
+[package]
+name = "wolapp"
+version = "0.0.1"
+edition = "2021"
+
+[dependencies]
+warp = "0.2"
+parking_lot = "0.10.0"
+routerify = "3"
+routerify-json-response = "3"
+hyper = "0.14"
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+rand = "0.8.4"
+lazy_static = "1.4.0"
+url = { version = "2", features = ["serde"] }
+log = "0.4.0"
+env_logger = "0.9.0"
+wake-on-lan = "0.2.0"
