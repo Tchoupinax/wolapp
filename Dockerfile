@@ -1,21 +1,19 @@
 FROM rust:1.68.2 as builder
 
-RUN USER=root cargo new --bin wolapp
 WORKDIR /wolapp
 
-COPY ./Cargo.lock ./Cargo.lock
-COPY ./Cargo.toml ./Cargo.toml
+COPY . .
 
 RUN cargo build --release
 
 ###
 
-FROM scratch
+FROM debian
 
 WORKDIR /app
 
 COPY --from=builder /wolapp/target/release/wolapp /app/wolapp
 
-EXPOSE 3000
+EXPOSE 5644
 
 CMD ["/app/wolapp"]

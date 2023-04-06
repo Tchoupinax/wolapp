@@ -37,7 +37,7 @@ fn router() -> Router<Body, routerify_json_response::Error> {
 async fn main() {
     let router = router();
     let service = RouterService::new(router).unwrap();
-    let addr = SocketAddr::from(([0, 0, 0, 0], 3000));
+    let addr = SocketAddr::from(([0, 0, 0, 0], 5644));
     let server = Server::bind(&addr).serve(service);
 
     println!("App is running on: {}", addr);
