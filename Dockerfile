@@ -1,4 +1,4 @@
-FROM rust:1.68.2 as builder
+FROM rust:1.72.1 as builder
 
 WORKDIR /wolapp
 
