@@ -14,6 +14,8 @@ WORKDIR /app
 
 COPY --from=builder /wolapp/target/release/wolapp /app/wolapp
 
+COPY views /app/views
+
 EXPOSE 5644
 
 CMD ["/app/wolapp"]
