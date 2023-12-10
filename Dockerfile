@@ -1,4 +1,4 @@
-FROM rust:1.72.1 as builder
+FROM rust:1.74 as builder
 
 WORKDIR /wolapp
 
@@ -7,13 +7,14 @@ COPY . .
 RUN cargo build --release
 
 ###
+###
+###
 
-FROM debian
+FROM scratch
 
 WORKDIR /app
 
 COPY --from=builder /wolapp/target/release/wolapp /app/wolapp
-
 COPY views /app/views
 
 EXPOSE 5644
